@@ -2,7 +2,8 @@ module.exports = {
   title: `KunheeKim.dev`,
   description: `Blog posted about ...`,
   author: `[Kunhee Kim]`,
-  introduction: `I am a student currently studying cyber defense in Korea University after graduating Seoul Science High School. I am intersted in Machine Learning and Backend Development.`,
+  introduction: ` Junior developer intersted in Machine Learning and Backend Development.
+  Studying Cyber Defense @ Korea Univ.`,
   siteUrl: `https://kunheekimdev.github.io`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account
