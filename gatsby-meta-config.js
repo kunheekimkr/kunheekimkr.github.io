@@ -1,6 +1,6 @@
 module.exports = {
-  title: `KunheeKim.dev`,
-  description: `Blog posted about ...`,
+  title: `KunheeKim.Dev`,
+  description: `Blog posted by Kunhee Kim`,
   author: `[Kunhee Kim]`,
   introduction: ` Junior developer intersted in Machine Learning and Backend Development.
   Studying Cyber Defense @ Korea Univ.`,
