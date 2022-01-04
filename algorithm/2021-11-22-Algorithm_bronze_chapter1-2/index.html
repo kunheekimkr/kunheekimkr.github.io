@@ -73,53 +73,53 @@
 <p><a href="https://www.acmicpc.net/problem/11970">백준에서 채점 가능</a></p>
 <p>직사각형 문제에 들어가기 전, 수직선 위의 두 선분의 교차하는 길이를 찾는 간단한 문제입니다.</p>
 <p>풀이는 다음과 같습니다.</p>
-<div class="gatsby-highlight" data-language="c++"><pre class="language-c++"><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;algorithm&gt;
-using namespace std;
-int main(){
-    int a,b,c,d;
-    cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d;
+<div class="gatsby-highlight" data-language="cpp"><pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">,</span>d<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> a <span class="token operator">>></span> b <span class="token operator">>></span> c <span class="token operator">>></span> d<span class="token punctuation">;</span>
 
-    int total = b-a +d-c;
-    int intersection = max(0, min(b,d) - max(a,c));
-    int ans = total - intersection;
-    cout &lt;&lt; ans;
-}</code></pre></div>
+    <span class="token keyword">int</span> total <span class="token operator">=</span> b<span class="token operator">-</span>a <span class="token operator">+</span>d<span class="token operator">-</span>c<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> intersection <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">min</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span>d<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">max</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> ans <span class="token operator">=</span> total <span class="token operator">-</span> intersection<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> ans<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p>우선 두 선분의 길이를 구하여 더한 뒤, 거기서 겹치는 부분의 길이를 구해 빼주어 답을 구합니다.</p>
 <p>여기서 겹치는 부분의 길이를 구할 때, 두 선분의 끝점 중 작은 값에서 두 선분의 시작점 중 큰 값을 빼서 구하고, 이 값이 0보다 작을 경우에는 겹치는 부분이 없다고 놓는 방법을 사용합니다.</p>
 <p><a href="http://www.usaco.org/index.php?page=viewproblem2&#x26;cpid=759">Example-Blocked Billboard</a></p>
 <p><a href="https://www.acmicpc.net/problem/15463">백준에서 채점 가능</a></p>
 <p>앞의 문제를 응용하여, 이번에는 두 판의 겹치지 않는 부분의 넓이를 구하는 문제입니다.</p>
 <p>풀이는 다음과 같습니다.</p>
-<div class="gatsby-highlight" data-language="c++"><pre class="language-c++"><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;algorithm&gt;
-using namespace std;
+<div class="gatsby-highlight" data-language="cpp"><pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
-//structure of a rectangle
-// (x1,y1) and (x2,y2) are the lower-left and upper-right coordinates
-// function area() returns the area of a rectangle
-struct Rect {
-    int x1, x2, y1, y2;
-    int area() {
-        return (y2-y1) * (x2-x1);
-    }
-};
+<span class="token comment">//structure of a rectangle</span>
+<span class="token comment">// (x1,y1) and (x2,y2) are the lower-left and upper-right coordinates</span>
+<span class="token comment">// function area() returns the area of a rectangle</span>
+<span class="token keyword">struct</span> <span class="token class-name">Rect</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x1<span class="token punctuation">,</span> x2<span class="token punctuation">,</span> y1<span class="token punctuation">,</span> y2<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>y2<span class="token operator">-</span>y1<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>x2<span class="token operator">-</span>x1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-//function that calculates the intersected part of two rectangles and returns the area of it
-int intersect (Rect p, Rect q){
-    int xoverlap= max(0,min(p.x2,q.x2) - max(p.x1, q.x1));
-    int yoverlap= max(0, min(p.y2, q.y2) - max(p.y1, q.y1));
-    return xoverlap*yoverlap;
-}
+<span class="token comment">//function that calculates the intersected part of two rectangles and returns the area of it</span>
+<span class="token keyword">int</span> <span class="token function">intersect</span> <span class="token punctuation">(</span>Rect p<span class="token punctuation">,</span> Rect q<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> xoverlap<span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token function">min</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>x2<span class="token punctuation">,</span>q<span class="token punctuation">.</span>x2<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">max</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>x1<span class="token punctuation">,</span> q<span class="token punctuation">.</span>x1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> yoverlap<span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">min</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>y2<span class="token punctuation">,</span> q<span class="token punctuation">.</span>y2<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">max</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>y1<span class="token punctuation">,</span> q<span class="token punctuation">.</span>y1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> xoverlap<span class="token operator">*</span>yoverlap<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-int main(){
-    Rect board1, board2 ,truck;
-    cin &gt;&gt; board1.x1 &gt;&gt; board1.y1 &gt;&gt; board1.x2 &gt;&gt; board1.y2;
-    cin &gt;&gt; board2.x1 &gt;&gt; board2.y1 &gt;&gt; board2.x2 &gt;&gt; board2.y2;
-    cin &gt;&gt; truck.x1 &gt;&gt; truck.y1 &gt;&gt; truck.x2 &gt;&gt; truck.y2;
-    int ans=board1.area()+board2.area()-intersect(board1, truck) - intersect(board2, truck);
-    cout &lt;&lt; ans;
-}</code></pre></div>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Rect board1<span class="token punctuation">,</span> board2 <span class="token punctuation">,</span>truck<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> board1<span class="token punctuation">.</span>x1 <span class="token operator">>></span> board1<span class="token punctuation">.</span>y1 <span class="token operator">>></span> board1<span class="token punctuation">.</span>x2 <span class="token operator">>></span> board1<span class="token punctuation">.</span>y2<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> board2<span class="token punctuation">.</span>x1 <span class="token operator">>></span> board2<span class="token punctuation">.</span>y1 <span class="token operator">>></span> board2<span class="token punctuation">.</span>x2 <span class="token operator">>></span> board2<span class="token punctuation">.</span>y2<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> truck<span class="token punctuation">.</span>x1 <span class="token operator">>></span> truck<span class="token punctuation">.</span>y1 <span class="token operator">>></span> truck<span class="token punctuation">.</span>x2 <span class="token operator">>></span> truck<span class="token punctuation">.</span>y2<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> ans<span class="token operator">=</span>board1<span class="token punctuation">.</span><span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span>board2<span class="token punctuation">.</span><span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token function">intersect</span><span class="token punctuation">(</span>board1<span class="token punctuation">,</span> truck<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">intersect</span><span class="token punctuation">(</span>board2<span class="token punctuation">,</span> truck<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> ans<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p>구조체 <code class="language-text">Rect</code>를 이용하여 사각형을 왼쪽 하단 꼭짓점과 오른쪽 상단 꼭짓점을 이용하여 정의하고, 함수 <code class="language-text">area()</code> 를 통해 사각형의 넓이를 리턴하도록 합니다.</p>
 <p>위의 문제에서 선분의 겹치는 길이를 구한 것과 같은 방법으로 가로변과 세로변의 겹치는 길이를 구한 후, 이를 이용하여 겹치는 부분의 넓이를 구하여 전체 사각형의 넓이에서 빼주어 넓이를 구할 수 있습니다.</p>
 <h2 id="3-자주-쓰이는-테크닉" style="position:relative;"><a href="#3-%EC%9E%90%EC%A3%BC-%EC%93%B0%EC%9D%B4%EB%8A%94-%ED%85%8C%ED%81%AC%EB%8B%89" aria-label="3 자주 쓰이는 테크닉 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. 자주 쓰이는 테크닉</h2>
@@ -127,156 +127,156 @@ int main(){
 <li>변의 길이와 넓이</li>
 </ul>
 <p>변의 길이는 간단하게 두 좌표 중 큰 것에서 작은 것을 빼서 구할 수 있으며, 그렇게 구한 가로와 세로의 길이를 곱하여 넓이를 구할 수 있습니다.</p>
-<div class="gatsby-highlight" data-language="c++"><pre class="language-c++"><code class="language-c++">void rect(int a_x,int a_y,int b_x,int b_y){
-    int width= b_x - a_x;
-    int height=b_y - a_y;
-    int area=width*height;
-}</code></pre></div>
+<div class="gatsby-highlight" data-language="cpp"><pre class="language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">rect</span><span class="token punctuation">(</span><span class="token keyword">int</span> a_x<span class="token punctuation">,</span><span class="token keyword">int</span> a_y<span class="token punctuation">,</span><span class="token keyword">int</span> b_x<span class="token punctuation">,</span><span class="token keyword">int</span> b_y<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> width<span class="token operator">=</span> b_x <span class="token operator">-</span> a_x<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> height<span class="token operator">=</span>b_y <span class="token operator">-</span> a_y<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> area<span class="token operator">=</span>width<span class="token operator">*</span>height<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
 <ul>
 <li>겹치는 부분</li>
 </ul>
 <p>겹치는 부분은 두 선분의 끝점 중 작은 것에서, 두 선분의 시작점 중 큰 것을 빼서 구합니다. 이 값이 0보다 작다는 것은 겹치는 부분이 없다는 의미이므로 대신 0을 사용합니다.</p>
-<div class="gatsby-highlight" data-language="c++"><pre class="language-c++"><code class="language-c++">int intersect(int a_start, int a_end, int b_start, int b_end){
-    return max(0,min(a_end,b_end)-max(a_start,b_start));
-}</code></pre></div>
+<div class="gatsby-highlight" data-language="cpp"><pre class="language-cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">intersect</span><span class="token punctuation">(</span><span class="token keyword">int</span> a_start<span class="token punctuation">,</span> <span class="token keyword">int</span> a_end<span class="token punctuation">,</span> <span class="token keyword">int</span> b_start<span class="token punctuation">,</span> <span class="token keyword">int</span> b_end<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token function">min</span><span class="token punctuation">(</span>a_end<span class="token punctuation">,</span>b_end<span class="token punctuation">)</span><span class="token operator">-</span><span class="token function">max</span><span class="token punctuation">(</span>a_start<span class="token punctuation">,</span>b_start<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
 <h2 id="4-연습문제" style="position:relative;"><a href="#4-%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C" aria-label="4 연습문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. 연습문제</h2>
 <p><a href="http://www.usaco.org/index.php?page=viewproblem2&#x26;cpid=663">Square Pasture</a></p>
 <p><a href="https://www.acmicpc.net/problem/14173">백준에서 채점 가능</a></p>
 <p>주어진 두 직사각형을 모두 덮는 최소 정사각형의 넓이를 구하며 되는 간단한 문제입니다.</p>
 <p>풀이는 다음과 같습니다.</p>
-<div class="gatsby-highlight" data-language="c++"><pre class="language-c++"><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;algorithm&gt;
-using namespace std;
-int main(){
+<div class="gatsby-highlight" data-language="cpp"><pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 
-    int x1,x2,y1,y2;
-    cin &gt;&gt; x1 &gt;&gt; y1 &gt;&gt; x2 &gt;&gt; y2;
+    <span class="token keyword">int</span> x1<span class="token punctuation">,</span>x2<span class="token punctuation">,</span>y1<span class="token punctuation">,</span>y2<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> x1 <span class="token operator">>></span> y1 <span class="token operator">>></span> x2 <span class="token operator">>></span> y2<span class="token punctuation">;</span>
 
-    int a1,a2,b1,b2;
-    cin &gt;&gt; a1 &gt;&gt; b1 &gt;&gt; a2 &gt;&gt; b2;
+    <span class="token keyword">int</span> a1<span class="token punctuation">,</span>a2<span class="token punctuation">,</span>b1<span class="token punctuation">,</span>b2<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> a1 <span class="token operator">>></span> b1 <span class="token operator">>></span> a2 <span class="token operator">>></span> b2<span class="token punctuation">;</span>
 
-    int min_x = min(x1,a1);
-    int max_x = max(x2,a2);
-    int min_y = min(y1,b1);
-    int max_y = max(y2,b2);
+    <span class="token keyword">int</span> min_x <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span>a1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> max_x <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>x2<span class="token punctuation">,</span>a2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> min_y <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>y1<span class="token punctuation">,</span>b1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> max_y <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>y2<span class="token punctuation">,</span>b2<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    int side= max(max_x - min_x,max_y - min_y);
-    int ans= side*side;
-    cout &lt;&lt; ans;
-}</code></pre></div>
+    <span class="token keyword">int</span> side<span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>max_x <span class="token operator">-</span> min_x<span class="token punctuation">,</span>max_y <span class="token operator">-</span> min_y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> ans<span class="token operator">=</span> side<span class="token operator">*</span>side<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> ans<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p>두 직사각형의 영역을 모두 포함시키는 폭과 높이를 계산한 뒤 더 큰 것을 한 변으로 하는 정사각형의 넓이를 구해주면 됩니다.</p>
 <p><a href="http://www.usaco.org/index.php?page=viewproblem2&#x26;cpid=783">Blocked Billboard 2</a></p>
 <p><a href="https://www.acmicpc.net/problem/15592">백준에서 채점 가능</a></p>
 <p>첫번쨰 판에서 두번째 판에 가리지 않는 부분을 덮을 수 있는 최소 직사각형의 크기를 구하는 문제입니다.</p>
 <p>풀이는 다음과 같습니다.</p>
-<div class="gatsby-highlight" data-language="c++"><pre class="language-c++"><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;algorithm&gt;
-using namespace std;
-int main(){
-    int x1,x2,y1,y2;
-    cin&gt;&gt; x1 &gt;&gt; y1 &gt;&gt; x2 &gt;&gt; y2;
-    int x3,x4,y3,y4;
-    cin &gt;&gt; x3 &gt;&gt; y3 &gt;&gt; x4 &gt;&gt; y4;
+<div class="gatsby-highlight" data-language="cpp"><pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x1<span class="token punctuation">,</span>x2<span class="token punctuation">,</span>y1<span class="token punctuation">,</span>y2<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span> x1 <span class="token operator">>></span> y1 <span class="token operator">>></span> x2 <span class="token operator">>></span> y2<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> x3<span class="token punctuation">,</span>x4<span class="token punctuation">,</span>y3<span class="token punctuation">,</span>y4<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> x3 <span class="token operator">>></span> y3 <span class="token operator">>></span> x4 <span class="token operator">>></span> y4<span class="token punctuation">;</span>
 
-    //Case 1: the second board fully covers the first board
-    if (x3 &lt;= x1 &amp;&amp; y3 &lt;= y1 &amp;&amp; x2 &lt;= x4 &amp;&amp; y2 &lt;= y4)
-        cout &lt;&lt; 0;
-    //Case 2: the second board covers the bottom of the first board
-    else if (x3 &lt;= x1 &amp;&amp; x2 &lt;= x4 &amp;&amp; y3 &lt;= y1 &amp;&amp; y4 &lt;= y2)
-        cout &lt;&lt; (x2-x1)*(y2-y4);
-    //Case 3: the second board covers the top of the first board
-    else if (x3 &lt;= x1 &amp;&amp; y1 &lt;= y3 &amp;&amp; x2 &lt;= x4 &amp;&amp; y2 &lt;= y4)
-        cout &lt;&lt; (x2-x1)*(y3-y1);
-    //Case 4: the second board covers the left of the first board
-    else if (x3 &lt;= x1 &amp;&amp; y3 &lt;= y1 &amp;&amp; x4 &lt;= x2 &amp;&amp; y2 &lt;= y4)
-        cout &lt;&lt; (x2-x4)*(y2-y1);
-    //Case 5: the second board covers the right of the first board
-    else if (x1 &lt;= x3 &amp;&amp; y3 &lt;= y1 &amp;&amp; x2 &lt;= x4 &amp;&amp; y2 &lt;= y4)
-        cout &lt;&lt; (x3-x1)*(y2-y1);
-    //Case 6: Other cases(Covering the corner, no intersection)
-    else
-        cout &lt;&lt; (x2-x1)*(y2-y1);
-}</code></pre></div>
+    <span class="token comment">//Case 1: the second board fully covers the first board</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>x3 <span class="token operator">&lt;=</span> x1 <span class="token operator">&amp;&amp;</span> y3 <span class="token operator">&lt;=</span> y1 <span class="token operator">&amp;&amp;</span> x2 <span class="token operator">&lt;=</span> x4 <span class="token operator">&amp;&amp;</span> y2 <span class="token operator">&lt;=</span> y4<span class="token punctuation">)</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token comment">//Case 2: the second board covers the bottom of the first board</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>x3 <span class="token operator">&lt;=</span> x1 <span class="token operator">&amp;&amp;</span> x2 <span class="token operator">&lt;=</span> x4 <span class="token operator">&amp;&amp;</span> y3 <span class="token operator">&lt;=</span> y1 <span class="token operator">&amp;&amp;</span> y4 <span class="token operator">&lt;=</span> y2<span class="token punctuation">)</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>x2<span class="token operator">-</span>x1<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>y2<span class="token operator">-</span>y4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Case 3: the second board covers the top of the first board</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>x3 <span class="token operator">&lt;=</span> x1 <span class="token operator">&amp;&amp;</span> y1 <span class="token operator">&lt;=</span> y3 <span class="token operator">&amp;&amp;</span> x2 <span class="token operator">&lt;=</span> x4 <span class="token operator">&amp;&amp;</span> y2 <span class="token operator">&lt;=</span> y4<span class="token punctuation">)</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>x2<span class="token operator">-</span>x1<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>y3<span class="token operator">-</span>y1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Case 4: the second board covers the left of the first board</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>x3 <span class="token operator">&lt;=</span> x1 <span class="token operator">&amp;&amp;</span> y3 <span class="token operator">&lt;=</span> y1 <span class="token operator">&amp;&amp;</span> x4 <span class="token operator">&lt;=</span> x2 <span class="token operator">&amp;&amp;</span> y2 <span class="token operator">&lt;=</span> y4<span class="token punctuation">)</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>x2<span class="token operator">-</span>x4<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>y2<span class="token operator">-</span>y1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Case 5: the second board covers the right of the first board</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>x1 <span class="token operator">&lt;=</span> x3 <span class="token operator">&amp;&amp;</span> y3 <span class="token operator">&lt;=</span> y1 <span class="token operator">&amp;&amp;</span> x2 <span class="token operator">&lt;=</span> x4 <span class="token operator">&amp;&amp;</span> y2 <span class="token operator">&lt;=</span> y4<span class="token punctuation">)</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>x3<span class="token operator">-</span>x1<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>y2<span class="token operator">-</span>y1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Case 6: Other cases(Covering the corner, no intersection)</span>
+    <span class="token keyword">else</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>x2<span class="token operator">-</span>x1<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>y2<span class="token operator">-</span>y1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p>첫번째 판과 두번쨰 판의 배치에 따라 6가지 경우로 나누어 주어 필요한 정사각형의 크기를 계산해 주면 됩니다.</p>
 <p><a href="https://codeforces.com/contest/1216/problem/C">White Sheet</a></p>
 <p>흰 판에서 두 검은 판에 포함되지 않는 부분의 유무를 구하는 문제입니다.</p>
 <p>풀이는 다음과 같습니다.</p>
-<div class="gatsby-highlight" data-language="c++"><pre class="language-c++"><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;algorithm&gt;
-using namespace std;
+<div class="gatsby-highlight" data-language="cpp"><pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
-struct Rect {
-    long long x1, x2, y1, y2;
-    long long area() {
-        return (y2-y1) * (x2-x1);
-    }
-};
+<span class="token keyword">struct</span> <span class="token class-name">Rect</span> <span class="token punctuation">{</span>
+    <span class="token keyword">long</span> <span class="token keyword">long</span> x1<span class="token punctuation">,</span> x2<span class="token punctuation">,</span> y1<span class="token punctuation">,</span> y2<span class="token punctuation">;</span>
+    <span class="token keyword">long</span> <span class="token keyword">long</span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>y2<span class="token operator">-</span>y1<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>x2<span class="token operator">-</span>x1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-long long intersect (Rect p, Rect q){
-    long long xoverlap= max((long long) 0, min(p.x2,q.x2) - max(p.x1, q.x1));
-    long long yoverlap= max((long long) 0, min(p.y2, q.y2) - max(p.y1, q.y1));
-    return xoverlap*yoverlap;
-}
+<span class="token keyword">long</span> <span class="token keyword">long</span> <span class="token function">intersect</span> <span class="token punctuation">(</span>Rect p<span class="token punctuation">,</span> Rect q<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">long</span> <span class="token keyword">long</span> xoverlap<span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">min</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>x2<span class="token punctuation">,</span>q<span class="token punctuation">.</span>x2<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">max</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>x1<span class="token punctuation">,</span> q<span class="token punctuation">.</span>x1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">long</span> <span class="token keyword">long</span> yoverlap<span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">min</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>y2<span class="token punctuation">,</span> q<span class="token punctuation">.</span>y2<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">max</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>y1<span class="token punctuation">,</span> q<span class="token punctuation">.</span>y1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> xoverlap<span class="token operator">*</span>yoverlap<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-long long intersect_three (Rect p, Rect q, Rect r){
-    long long xoverlap= max((long long)0, min(min(p.x2,q.x2),r.x2) - max(max(p.x1, q.x1),r.x1));
-    long long yoverlap= max((long long)0, min(min(p.y2, q.y2),r.y2) - max(max(p.y1, q.y1),r.y1));
-    return xoverlap*yoverlap;
-}
+<span class="token keyword">long</span> <span class="token keyword">long</span> <span class="token function">intersect_three</span> <span class="token punctuation">(</span>Rect p<span class="token punctuation">,</span> Rect q<span class="token punctuation">,</span> Rect r<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">long</span> <span class="token keyword">long</span> xoverlap<span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">min</span><span class="token punctuation">(</span><span class="token function">min</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>x2<span class="token punctuation">,</span>q<span class="token punctuation">.</span>x2<span class="token punctuation">)</span><span class="token punctuation">,</span>r<span class="token punctuation">.</span>x2<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token function">max</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>x1<span class="token punctuation">,</span> q<span class="token punctuation">.</span>x1<span class="token punctuation">)</span><span class="token punctuation">,</span>r<span class="token punctuation">.</span>x1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">long</span> <span class="token keyword">long</span> yoverlap<span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">min</span><span class="token punctuation">(</span><span class="token function">min</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>y2<span class="token punctuation">,</span> q<span class="token punctuation">.</span>y2<span class="token punctuation">)</span><span class="token punctuation">,</span>r<span class="token punctuation">.</span>y2<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token function">max</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>y1<span class="token punctuation">,</span> q<span class="token punctuation">.</span>y1<span class="token punctuation">)</span><span class="token punctuation">,</span>r<span class="token punctuation">.</span>y1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> xoverlap<span class="token operator">*</span>yoverlap<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-int main(){
-    Rect w, b1, b2;
-    cin &gt;&gt; w.x1 &gt;&gt; w.y1 &gt;&gt; w.x2 &gt;&gt; w.y2;
-    cin &gt;&gt; b1.x1 &gt;&gt; b1.y1 &gt;&gt; b1.x2 &gt;&gt; b1.y2;
-    cin &gt;&gt; b2.x1 &gt;&gt; b2.y1 &gt;&gt; b2.x2 &gt;&gt; b2.y2;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Rect w<span class="token punctuation">,</span> b1<span class="token punctuation">,</span> b2<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> w<span class="token punctuation">.</span>x1 <span class="token operator">>></span> w<span class="token punctuation">.</span>y1 <span class="token operator">>></span> w<span class="token punctuation">.</span>x2 <span class="token operator">>></span> w<span class="token punctuation">.</span>y2<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> b1<span class="token punctuation">.</span>x1 <span class="token operator">>></span> b1<span class="token punctuation">.</span>y1 <span class="token operator">>></span> b1<span class="token punctuation">.</span>x2 <span class="token operator">>></span> b1<span class="token punctuation">.</span>y2<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> b2<span class="token punctuation">.</span>x1 <span class="token operator">>></span> b2<span class="token punctuation">.</span>y1 <span class="token operator">>></span> b2<span class="token punctuation">.</span>x2 <span class="token operator">>></span> b2<span class="token punctuation">.</span>y2<span class="token punctuation">;</span>
 
-    long long visible=w.area()-intersect(w,b1) -intersect(w,b2)+intersect_three(w,b1,b2);
-    if(visible &gt;0)
-        cout &lt;&lt; &quot;YES&quot;;
-    else
-        cout &lt;&lt; &quot;NO&quot;;
-}</code></pre></div>
+    <span class="token keyword">long</span> <span class="token keyword">long</span> visible<span class="token operator">=</span>w<span class="token punctuation">.</span><span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token function">intersect</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span>b1<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token function">intersect</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span>b2<span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">intersect_three</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span>b1<span class="token punctuation">,</span>b2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>visible <span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"YES"</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"NO"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p>연습문제를 응용하여 세 직사각형에 모두 포함되는 영역을 구해줄 수 있습니다.</p>
 <p>흰 직사각형의 넓이 - 검은 직사각형으로 덮인 부분의 넓이 + 두 검은 직사각형에 모두 덮인 부분의 넓이 를 계산하여 그 값이 0보다 큰지를 통해 덮이지 않은 부분의 유무를 판별할 수 있습니다.</p>
 <p><a href="https://codeforces.com/problemset/problem/1555/B">Two Tables</a></p>
 <p>두 책상이 모두 방 안에 배치될 수 있도록 첫 사각형을 밀어야 할 최소 거리를 구하는 문제입니다.</p>
 <p>풀이는 다음과 같습니다.</p>
-<div class="gatsby-highlight" data-language="c++"><pre class="language-c++"><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;algorithm&gt;
-using namespace std;
-int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    int k;
-    cin &gt;&gt; k;
-    while(k--){
-        int max_w, max_h;
-        cin &gt;&gt; max_w &gt;&gt; max_h;
-        int x1, y1, x2, y2;
-        cin &gt;&gt; x1 &gt;&gt; y1 &gt;&gt; x2 &gt;&gt; y2;
-        int width=x2-x1;
-        int height=y2-y1;
-        int w, h;
-        cin &gt;&gt; w &gt;&gt; h;
+<div class="gatsby-highlight" data-language="cpp"><pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    ios_base<span class="token double-colon punctuation">::</span><span class="token function">sync_with_stdio</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cin<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> k<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> k<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>k<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> max_w<span class="token punctuation">,</span> max_h<span class="token punctuation">;</span>
+        cin <span class="token operator">>></span> max_w <span class="token operator">>></span> max_h<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> x1<span class="token punctuation">,</span> y1<span class="token punctuation">,</span> x2<span class="token punctuation">,</span> y2<span class="token punctuation">;</span>
+        cin <span class="token operator">>></span> x1 <span class="token operator">>></span> y1 <span class="token operator">>></span> x2 <span class="token operator">>></span> y2<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> width<span class="token operator">=</span>x2<span class="token operator">-</span>x1<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> height<span class="token operator">=</span>y2<span class="token operator">-</span>y1<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> w<span class="token punctuation">,</span> h<span class="token punctuation">;</span>
+        cin <span class="token operator">>></span> w <span class="token operator">>></span> h<span class="token punctuation">;</span>
 
 
-        int move_x=-1, move_y=-1;
-        if(width+w &lt;= max_w)
-            move_x = max(0, w-max(x1,max_w-x2));
-        if(height + h &lt;= max_h)
-            move_y = max(0, h-max(y1,max_h-y2));
+        <span class="token keyword">int</span> move_x<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> move_y<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>width<span class="token operator">+</span>w <span class="token operator">&lt;=</span> max_w<span class="token punctuation">)</span>
+            move_x <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> w<span class="token operator">-</span><span class="token function">max</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span>max_w<span class="token operator">-</span>x2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>height <span class="token operator">+</span> h <span class="token operator">&lt;=</span> max_h<span class="token punctuation">)</span>
+            move_y <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> h<span class="token operator">-</span><span class="token function">max</span><span class="token punctuation">(</span>y1<span class="token punctuation">,</span>max_h<span class="token operator">-</span>y2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        if(move_x ==-1 &amp;&amp; move_y !=-1)
-            cout &lt;&lt; move_y &lt;&lt; &#39;\n&#39;;
-        else if (move_x !=-1 &amp;&amp; move_y == -1)
-            cout &lt;&lt; move_x &lt;&lt; &#39;\n&#39;;
-        else if (move_x != -1 &amp;&amp; move_y !=-1)
-            cout &lt;&lt; min(move_x, move_y) &lt;&lt; &#39;\n&#39;;
-        else
-            cout &lt;&lt; -1 &lt;&lt; &#39;\n&#39;;
-    }
-}</code></pre></div>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>move_x <span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> move_y <span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+            cout <span class="token operator">&lt;&lt;</span> move_y <span class="token operator">&lt;&lt;</span> <span class="token string">'\n'</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>move_x <span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> move_y <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+            cout <span class="token operator">&lt;&lt;</span> move_x <span class="token operator">&lt;&lt;</span> <span class="token string">'\n'</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>move_x <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> move_y <span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+            cout <span class="token operator">&lt;&lt;</span> <span class="token function">min</span><span class="token punctuation">(</span>move_x<span class="token punctuation">,</span> move_y<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">'\n'</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span>
+            cout <span class="token operator">&lt;&lt;</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token string">'\n'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p>x와 y 방향으로 이동해야할 필요성과 이동해야 할 거리를 각각 구한 다음, 둘 중 최소로 이동하면 됩니다.</p></div><div class="social-share"><a class="resp-sharing-button__link" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook"><div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--large"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"></path></svg></div><span class="service-label">Share on Facebook</span></div></a><a class="resp-sharing-button__link" href="#" rel="noopener" aria-label="Share on Twitter"><div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--large"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"></path></svg></div><span class="service-label">Share on Twitter</span></div></a></div><hr class="custom-hr"/><div class="bio"><div class="author"><div class="author-description"><div class="author-image gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:72px;height:72px;border-radius:100%"><img aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAARlAAAEZQAGA43XUAAADbUlEQVQ4y2P4Nm8u2YgBv/SXuXO+z5v3Y/58IPvrvDmkaf63ZPHXuXM+zp75a+GCv4sWAtlEaQaqA2pYXZCb4emU7unUEBF4ob0FqP8Lkn4GXK79v3jxqoIcc21lD1Mdf2uDEHvDBFeLbRUlvxcugNvPgNXOnwvmv5w6NdrB0tdCP9bJPMPTpjTIJcvbNsvb7smUib8WQPVj1/x7wYIHU/pD7Uz9LQ1inSyS3a2KAp3SPG1yfW1PNtf+XbToC07N8+b+nDfv2ao5GX5OodaG8U4WuT62GR5Wqa4WZcFOh+oq/y3GrfnznNnf5s59OGfy0fk9JZG+EXbGR1bN3rtyTk2cf6Gf/a2+7j8LF2JxNlAIqBMYJP+XLHkxe9KDPavmt1TsnNH+/92t/x/u9ldlTYgL+7t4EZYAAwp9nz8PKHezp3tJdtb2uqI3+9feOrDhy4U9p9fMXtXbMCk55s2MacCwhKcWBrjOH/PnvZ4+LcvDU0xMUlpG8uKqaa+3zv9zYff/G4ePLp72dNb0f4sWAU3/ihbPX8Ga/y5ZHOfozMzD721mIiEivqCv4fGupdOKUltyku3NTNYXF/1fvvTT7NnoKezTnNn/ly9bkJnJzS8kK6doqqBsJyvHKyCopa7KwsHNwSXAJyiqpqh8pavr75JFwED5CtcMDPQ/ixbe6etVkpGTkJQRERG3NzPa1FbhbGPFyc1vpKXpa28lKynBxS/koG8ItBnoeLC35wE1MoCsXbwo1cWFiZ1LWFhUUlT46ub5/5+cPTCt01hVdd+8vv83DlSkRvLw8IuJih6pr300uf/p5Ak/58z6t2A+w//FSz7Pnq0pr8TBwy8oJConLbl7wYSj6+ZXpidWFZeuWLx4zaIFbV292aW1OSXVzc1tlVVVzdXlSzraTkycwLCtoXJ5RaGHtZmcjLSYqLiwsJiEqGhSYlzn9EXT5i1avGjmmuUTF86ftnhKy/LJtUumtCyZ0T1x+rTWydPzC7IZSqvLS6vK6iqLy3JT0qID44K9owM8u1uyTuzq2D4/f1FX4rz2pN6GlA09wTs7vba2eO6fGLdr5dRNq5Ysn9jI0DlpWveUGb3T50ycvaB/4oS6kqyi1MjSrPD6wpD8pOD02JDitJiqrLgpjYXL+mvXT206umra1YOb754/du/SaQDVm7siOKQpiQAAAABJRU5ErkJggg==" alt="[Kunhee Kim]" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/0731cca8d315a4b9049066fdc1db15e4/e5b88/profile.png 1x,
 /static/0731cca8d315a4b9049066fdc1db15e4/e7bd6/profile.png 1.5x,
 /static/0731cca8d315a4b9049066fdc1db15e4/a12fc/profile.png 2x" /><img loading="lazy" width="72" height="72" srcset="/static/0731cca8d315a4b9049066fdc1db15e4/e5b88/profile.png 1x,
