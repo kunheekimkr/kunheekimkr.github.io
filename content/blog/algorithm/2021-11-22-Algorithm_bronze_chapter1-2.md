@@ -23,7 +23,7 @@ draft: false
 
 풀이는 다음과 같습니다.
 
-```c++
+```cpp
 #include<iostream>
 #include<algorithm>
 using namespace std;
@@ -50,7 +50,7 @@ int main(){
 
 풀이는 다음과 같습니다.
 
-```c++
+```cpp
 #include<iostream>
 #include<algorithm>
 using namespace std;
@@ -92,7 +92,7 @@ int main(){
 
 변의 길이는 간단하게 두 좌표 중 큰 것에서 작은 것을 빼서 구할 수 있으며, 그렇게 구한 가로와 세로의 길이를 곱하여 넓이를 구할 수 있습니다.
 
-```c++
+```cpp
 void rect(int a_x,int a_y,int b_x,int b_y){
     int width= b_x - a_x;
     int height=b_y - a_y;
@@ -104,7 +104,7 @@ void rect(int a_x,int a_y,int b_x,int b_y){
 
 겹치는 부분은 두 선분의 끝점 중 작은 것에서, 두 선분의 시작점 중 큰 것을 빼서 구합니다. 이 값이 0보다 작다는 것은 겹치는 부분이 없다는 의미이므로 대신 0을 사용합니다.
 
-```c++
+```cpp
 int intersect(int a_start, int a_end, int b_start, int b_end){
     return max(0,min(a_end,b_end)-max(a_start,b_start));
 }
@@ -120,7 +120,7 @@ int intersect(int a_start, int a_end, int b_start, int b_end){
 
 풀이는 다음과 같습니다.
 
-```c++
+```cpp
 #include<iostream>
 #include<algorithm>
 using namespace std;
@@ -153,7 +153,7 @@ int main(){
 
 풀이는 다음과 같습니다.
 
-```c++
+```cpp
 #include<iostream>
 #include<algorithm>
 using namespace std;
@@ -192,7 +192,7 @@ int main(){
 
 풀이는 다음과 같습니다.
 
-```c++
+```cpp
 #include<iostream>
 #include<algorithm>
 using namespace std;
@@ -240,7 +240,7 @@ int main(){
 
 풀이는 다음과 같습니다.
 
-```c++
+```cpp
 #include<iostream>
 #include<algorithm>
 using namespace std;
