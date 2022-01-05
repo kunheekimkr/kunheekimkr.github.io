@@ -8,7 +8,7 @@
     "url": "https://github.com/kunheekimdev/kunheekimdev.github.io/issues"
   },
   "dependencies": {
-    "gatsby": "^2.2.8",
+    "gatsby": "^2.25.0",
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-feed": "^2.1.0",
     "gatsby-plugin-google-adsense": "^1.1.3",
@@ -17,7 +17,7 @@
     "gatsby-plugin-manifest": "^2.0.24",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.10",
-    "gatsby-plugin-robots-txt": "^1.5.5",
+    "gatsby-plugin-robots-txt": "^1.6.14",
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-plugin-sharp": "^2.0.30",
     "gatsby-plugin-sitemap": "^2.12.0",
