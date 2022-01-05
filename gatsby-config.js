@@ -64,6 +64,7 @@ module.exports = {
           `gatsby-remark-smartypants`,
           `gatsby-remark-autolink-headers`,
           `gatsby-remark-emoji`,
+          `gatsby-plugin-sitemap`,
         ],
       },
     },
@@ -96,8 +97,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://your-blog.netlify.app',
-        sitemap: 'https://your-blog.netlify.app/sitemap.xml',
+        host: 'https://kunheekimdev.github.io',
+        sitemap: 'https://kunheekimdev.github.io/sitemap.xml',
         policy: [
           {
             userAgent: '*',
