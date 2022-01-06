@@ -96,8 +96,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://kunheekimdev.github.io',
-        sitemap: 'https://kunheekimdev.github.io/sitemap.xml',
+        host: 'https://kunheekimkr.github.io',
+        sitemap: 'https://kunheekimkr.github.io/sitemap.xml',
         policy: [
           {
             userAgent: '*',

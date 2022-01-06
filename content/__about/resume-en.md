@@ -22,9 +22,9 @@ lang: 'en'
 
 |               |                                         |
 | :-----------: | --------------------------------------- |
-|  **Github**   | https://github.com/kunheekimdev         |
+|  **Github**   | https://github.com/kunheekimkr          |
 | **Instagram** | https://www.instagram.com/kunstagrammm/ |
-|  **블로그**   | https://kunheekimdev.github.io          |
+|  **블로그**   | https://kunheekimkr.github.io           |
 |   **Email**   | kunheekim@korea.ac.kr                   |
 
 </div>
