@@ -2,7 +2,7 @@ module.exports = {
   title: `KunheeKim.Dev`,
   description: `Blog posted by Kunhee Kim`,
   author: `[Kunhee Kim]`,
-  introduction: ` Junior developer intersted in Machine Learning and Backend Development.
+  introduction: ` Junior developer intersted in Machine Learning and Problem Solving.
   Studying Cyber Defense @ Korea Univ.`,
   siteUrl: `https://kunheekimkr.github.io`, // Your blog site url
   social: {
