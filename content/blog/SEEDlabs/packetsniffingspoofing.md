@@ -5,6 +5,8 @@ category: 'SEEDlabs'
 draft: false
 ---
 
+[Lab Instructions](https://seedsecuritylabs.org/Labs_16.04/PDF/Sniffing_Spoofing.pdf)
+
 ## Network Setup
 
 For this lab, a network between virtual machines have been made.
