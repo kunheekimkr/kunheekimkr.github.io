@@ -1,5 +1,5 @@
 ---
-title: '[Algorithm] 소개'
+title: '[USACO Guide] 소개'
 date: 2021-11-22 21:30
 category: 'Algorithm'
 draft: false

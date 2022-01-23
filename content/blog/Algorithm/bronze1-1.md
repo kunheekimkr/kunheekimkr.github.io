@@ -1,5 +1,5 @@
 ---
-title: '[Algorithm] Bronze 1-1. 시간복잡도(Time Complexity)'
+title: '[USACO Guide] Bronze 1-1. 시간복잡도(Time Complexity)'
 date: 2021-11-22 22:30
 category: 'Algorithm'
 draft: false

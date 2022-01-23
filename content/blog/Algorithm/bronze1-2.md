@@ -1,5 +1,5 @@
 ---
-title: '[Algorithm] Bronze 1-2. Rectangle Geometry'
+title: '[USACO Guide] Bronze 1-2. Rectangle Geometry'
 date: 2021-11-22 23:30
 category: 'Algorithm'
 draft: false
