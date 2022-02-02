@@ -1,4 +1,448 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[KunheeKim.Dev]]></title><description><![CDATA[Blog posted by Kunhee Kim]]></description><link>https://kunheekimkr.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 27 Jan 2022 08:42:12 GMT</lastBuildDate><item><title><![CDATA[[파이썬 머신러닝 완벽 가이드] 1.파이썬 기반의 머신 러닝과 생태계 이해(2)]]></title><description><![CDATA[Chapter 1 의 이전 내용은 이전 글 을 확인해 주세요! 4. 판다스 (Pandas) 판다스는 파이썬의 데이터 핸들링 라이브러리입니다. 데이터를 2차원의  객체로 변환하여 각종 데이터 핸들링을 수행할 수 있습니다. 4.…]]></description><link>https://kunheekimkr.github.io/ML/chapter1-2/</link><guid isPermaLink="false">https://kunheekimkr.github.io/ML/chapter1-2/</guid><pubDate>Tue, 25 Jan 2022 17:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Chapter 1 의 이전 내용은 &lt;a href=&quot;https://kunheekimkr.github.io/ML/chapter1-1/&quot;&gt;이전 글&lt;/a&gt; 을 확인해 주세요!&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[KunheeKim.Dev]]></title><description><![CDATA[Blog posted by Kunhee Kim]]></description><link>https://kunheekimkr.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 02 Feb 2022 12:29:15 GMT</lastBuildDate><item><title><![CDATA[[파이썬 머신러닝 완벽 가이드] 2.사이킷런으로 시작하는 머신러닝(1)]]></title><description><![CDATA[1. 사이킷런 소개와 특징 은 가장 많이 사용되는 파이썬 머신 러닝 라이브러리입니다. 이 책은 사이킷런을 기반으로 하여 다양한 머신 러닝 모델을 작성하는 것을 가르치고 있습니다.…]]></description><link>https://kunheekimkr.github.io/ML/chapter2-1/</link><guid isPermaLink="false">https://kunheekimkr.github.io/ML/chapter2-1/</guid><pubDate>Wed, 02 Feb 2022 07:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;1-사이킷런-소개와-특징&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%82%AC%EC%9D%B4%ED%82%B7%EB%9F%B0-%EC%86%8C%EA%B0%9C%EC%99%80-%ED%8A%B9%EC%A7%95&quot; aria-label=&quot;1 사이킷런 소개와 특징 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 사이킷런 소개와 특징&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;사이킷런(Scikit-learn)&lt;/code&gt;은 가장 많이 사용되는 파이썬 머신 러닝 라이브러리입니다. 이 책은 사이킷런을 기반으로 하여 다양한 머신 러닝 모델을 작성하는 것을 가르치고 있습니다.&lt;/p&gt;
+&lt;h2 id=&quot;2-첫-번째-머신러닝-만들어-보기---붓꽃-품종-예측하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EC%B2%AB-%EB%B2%88%EC%A7%B8-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%EB%A7%8C%EB%93%A4%EC%96%B4-%EB%B3%B4%EA%B8%B0---%EB%B6%93%EA%BD%83-%ED%92%88%EC%A2%85-%EC%98%88%EC%B8%A1%ED%95%98%EA%B8%B0&quot; aria-label=&quot;2 첫 번째 머신러닝 만들어 보기   붓꽃 품종 예측하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 첫 번째 머신러닝 만들어 보기 - 붓꽃 품종 예측하기&lt;/h2&gt;
+&lt;p&gt;사이킷런을 통해 첫 번째로 만들어볼 머신러닝 모델은 붓꽃 꽃잎의 길이와 너비, 꽃받침의 길이와 너비 피처를 기반으로 꽃의 품종을 예측하는 분류 모델 입니다.&lt;/p&gt;
+&lt;p&gt;우선 필요한 모듈들을 임포트합니다. 붓꽃 데이터 세트를 생성하고 학습 데이터와 테스트 데이터로 분리하고 의사 결정트리를 사용하기 위해 다음과 같이 필요한 모듈을 임포트합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;datasets &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; load_iris
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tree &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; DecisionTreeClassifier
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;model_selection &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; train_test_split&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;load_iris()&lt;/code&gt; 함수를 통해 붓꽃 데이터 세트를 로딩한 후 &lt;code class=&quot;language-text&quot;&gt;DataFrame&lt;/code&gt; 으로 변환하여 데이터를 분석합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#데이터 분석을 위해 pandas 사용&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; pandas &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; pd
+
+&lt;span class=&quot;token comment&quot;&gt;#붓꽃 데이터셋 로딩&lt;/span&gt;
+iris&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;load_iris&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;#피쳐 데이터와 레이블 데이터를 서로 분리&lt;/span&gt;
+iris_data&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;iris&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;data
+iris_label&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;iris&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;target
+&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;iris target값:&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; iris_label&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;iris target명:&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; iris&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;target_names&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;#붓꽃 데이터 세트를 DataFrame 으로 변환하여 분석&lt;/span&gt;
+iris_df&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;pd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DataFrame&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;iris_data&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; columns&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;iris&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;feature_names&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+iris_df&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;label&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;iris&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;target
+iris_df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;head&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;[실행 결과]
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 682px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 41.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABMElEQVQoz02RWbaCQAxE2QeoIMigMskggvP+95SXG23P+8jpqnRSSVd73TDI+XKRaZ7l1PcynM8yavTjaLztOjvhhPF/OfqrurZo2la85nT6FGgghDi4rCorQqDTZrjLwVvtgx/LUjabjazXawuP5OF4lCzP7ST2h4MU+70FDeTAnHC3kbuLtluJosjCYxqrUrBL08+52/2aE8Xlt5mGIAjE932L1WplPAxDu+P0iqKQeVnk+X7L9X6XQX2BP14vWa5X6dWj+/Np9/iLHcvtZjXOplQX4dm2IZuM02TezSqAIJxCmhye9B4hBvCBFw3qwbku9RNkwziOJdRElmX2fDDr80z8BJOrm8a2ASdJYrW5em+577M9/NqqIASM+c5gJqc6xHHuYhUCI8gwfAc7wT/IIPNceWj/5AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;실행결과&quot;
+        title=&quot;실행결과&quot;
+        src=&quot;/static/ce4dc2944b425394ef319c51dbf31549/160a3/1.png&quot;
+        srcset=&quot;/static/ce4dc2944b425394ef319c51dbf31549/5a46d/1.png 300w,
+/static/ce4dc2944b425394ef319c51dbf31549/0a47e/1.png 600w,
+/static/ce4dc2944b425394ef319c51dbf31549/160a3/1.png 682w&quot;
+        sizes=&quot;(max-width: 682px) 100vw, 682px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;피처에는 &lt;code class=&quot;language-text&quot;&gt;sepal length&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;sepal width&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;petal length&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;petal width&lt;/code&gt;의 4 종류가 있으며, 레이블 데이터는 &lt;code class=&quot;language-text&quot;&gt;setosa&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;versicolor&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;virginica&lt;/code&gt; 의 세 가지로 각각 0, 1, 2 의 값으로 저장이 되어 있습니다.&lt;/p&gt;
+&lt;p&gt;다음으로 할 일은 붓꽃 데이터 세트를 학습용 데이터와 테스트용 데이터로 분리하는 일입니다. 테스트용 데이터를 통해 학습 데이터를 이용해 학습된 모델이 얼마나 뛰어난 성능을 가지는지 평가하기 위해서입니다.
+이를 위해 &lt;code class=&quot;language-text&quot;&gt;train_test_split()&lt;/code&gt; 함수를 이용합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;X_train&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; X_test&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; y_train&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; y_test &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; train_test_split&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;iris_data&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; iris_label&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; test_size&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; random_state&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;확보한 데이터를 바탕으로 머신러닝 분류 알고리즘 주 하나인 의사 결정 트리를 이용해 학습과 예측을 수행해 보겠습니다. 사이킷런에서 머신러닝 알고리즘을 사용할 때에는 알고리즘에 따라 객체를 생성한 뒤, 객체의 &lt;code class=&quot;language-text&quot;&gt;fit&lt;/code&gt; 매서드에 학습용 피처 데이터 세트와 레이블 데이터 세트를 입력하여 호출하여 학습을 진행시킵니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#DecisionTreeClassifier 객체 생성&lt;/span&gt;
+dt_clf&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;DecisionTreeClassifier&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;random_state&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;#학습 수행&lt;/span&gt;
+dt_clf&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;fit&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;X_train&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; y_train&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;학습된 모델을 기반으로 예측을 수행하기 위해서는 &lt;code class=&quot;language-text&quot;&gt;predict&lt;/code&gt; 메서드에 피처 데이터 세트를 입력해 호출하면 학습된 모델 기반에서 피처 데이터 세트에 대한 레이블 예측값을 반환합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;pred&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;dt_clf&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;predict&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;X_test&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;예축 결과를 기반으로 의사 결정 트리의 예측 성능을 평가해 봅시다. &lt;code class=&quot;language-text&quot;&gt;sklearn.datasets&lt;/code&gt; 내의 모듈은 모델의 성능을 측정하는 모듈들의 모임입니다. 이중 &lt;code class=&quot;language-text&quot;&gt;accuracy_score()&lt;/code&gt; 를 이용하여 정확도를 측정해 보겠습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;metrics &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; accuracy_score
+&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;예측 정확도: {0:.4f}&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;accuracy_score&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;y_test&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;pred&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;[실행 결과]&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;예측 정확도: 0.9333&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;실제 테스트 레이블 데이터 세트와 예측값을 비교한 결과 정확도 0.9333을 확인 할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;수행한 분류 예측 프로세스를 정리하면 다음과 같습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;데이터 세트 분리: 데이터를 학습 데이터와 테스트 데이터로 분리합니다.&lt;/li&gt;
+&lt;li&gt;모델 학습: 학습 데이터를 기반으로 ML 알고리즘을 적용해 모델을 학습시킵니다.&lt;/li&gt;
+&lt;li&gt;예측 수행: 학습된 ML 모델을 이용해 테스트 데이터의 분류를 예측합니다.&lt;/li&gt;
+&lt;li&gt;평가: 이렇게 예측된 결과값과 테스트 데이터의 실제 결과값을 비교해 ML 모델 성능을 평가합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;3-사이킷런의-기반-프레임워크-익히기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EC%82%AC%EC%9D%B4%ED%82%B7%EB%9F%B0%EC%9D%98-%EA%B8%B0%EB%B0%98-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC-%EC%9D%B5%ED%9E%88%EA%B8%B0&quot; aria-label=&quot;3 사이킷런의 기반 프레임워크 익히기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. 사이킷런의 기반 프레임워크 익히기&lt;/h2&gt;
+&lt;h3 id=&quot;31-estiamtor-이해-및-fit-predict-메서드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#31-estiamtor-%EC%9D%B4%ED%95%B4-%EB%B0%8F-fit-predict-%EB%A9%94%EC%84%9C%EB%93%9C&quot; aria-label=&quot;31 estiamtor 이해 및 fit predict 메서드 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3.1. Estiamtor 이해 및 fit(), predict() 메서드&lt;/h3&gt;
+&lt;p&gt;사이킷런은 지도학습의 주요 두 축인 분류와 회귀의 다양한 알고리즘을 클래스로 구현하여 사용하기 쉽게 합니다. 분류 알고리즘을 구현한 클래스는 &lt;code class=&quot;language-text&quot;&gt;Classifier&lt;/code&gt;, 회귀 알고리즘을 구현한 클래스는 &lt;code class=&quot;language-text&quot;&gt;Regressor&lt;/code&gt;로 지칭하며, 이들을 합쳐 &lt;code class=&quot;language-text&quot;&gt;Estimator&lt;/code&gt; 클래스라고 부릅니다. 이들은 &lt;code class=&quot;language-text&quot;&gt;fit()&lt;/code&gt; 과 &lt;code class=&quot;language-text&quot;&gt;predict()&lt;/code&gt; 매서드를 통해 간단하게 학습과 예측을 합니다. &lt;code class=&quot;language-text&quot;&gt;cross_val_score&lt;/code&gt; 와 같은 평가 함수나, &lt;code class=&quot;language-text&quot;&gt;GridSearchCV&lt;/code&gt;와 같은 하이퍼 파라미터 튜닝을 지원하는 클래스는 이 &lt;code class=&quot;language-text&quot;&gt;Estimator&lt;/code&gt; 클래스를 인자로 받아 주어진 역할을 수행합니다.&lt;/p&gt;
+&lt;p&gt;사이킷런은 비지도학습인 차원 축소, 클러스터링, 피처 추출 등도 클래스로 구현하여 사용하기 쉽게 합니다. 이러한 클래스는 입력 데이터의 형테에 맞춰 데이터를 변환하기 위한 사전 구조 작업인 &lt;code class=&quot;language-text&quot;&gt;fit()&lt;/code&gt; 과, 입력 데이터의 차원 변환, 클러스터링, 피처 추출 등 작업을 수행하는 &lt;code class=&quot;language-text&quot;&gt;transform()&lt;/code&gt; 매서드를 사용해 비지도학습을 쉽게 수행할 수 있도록 합니다.&lt;/p&gt;
+&lt;h3 id=&quot;32-사이킷런의-주요-모듈&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#32-%EC%82%AC%EC%9D%B4%ED%82%B7%EB%9F%B0%EC%9D%98-%EC%A3%BC%EC%9A%94-%EB%AA%A8%EB%93%88&quot; aria-label=&quot;32 사이킷런의 주요 모듈 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3.2. 사이킷런의 주요 모듈&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;분류&lt;/th&gt;
+&lt;th&gt;모듈명&lt;/th&gt;
+&lt;th&gt;설명&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;예제 데이터&lt;/td&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;sklearn.datasets&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;예제 데이터세트&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;피처 처리&lt;/td&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;sklearn.preprocessing&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;데이터 전처리에 필요한 가공 기능&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;피처 처리&lt;/td&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;sklearn.feature_selection&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;알고리즘에 큰 영향을 미치는 피처를 우선순위대로 선택&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;피처 처리&lt;/td&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;sklearn.feature_extraction&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;텍스트 데이터나 이미지 데이터의 벡터화된 피처 추출&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;피처 처리 &amp;#x26; 차원 축소&lt;/td&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;sklearn.decomposition&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;차원 축소와 관련된 알고리즘&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;데이터 분리, 검증 &amp;#x26; 파라미터 튜닝&lt;/td&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;sklearn.model_selection&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;교차 검증을 위한 학습용/테스트용 분리, 그리드 서치로 최적 파라미터 추출&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;평가&lt;/td&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;sklearn.metrics&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;다양한 성능 측정 방법 제공&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ML 알고리즘&lt;/td&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;sklearn.ensemble&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;앙상블 알고리즘&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ML 알고리즘&lt;/td&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;sklearn.linear_model&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;선형 회귀, 릿지, 라쏘, 로지스틱 회귀 등 회귀 관련 알고리즘 제공&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ML 알고리즘&lt;/td&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;sklearn.naive_bayes&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;나이브 베이즈 알고리즘&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ML 알고리즘&lt;/td&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;sklearn.neighbors&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;최근접 이웃 알고리즘 알고리즘&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ML 알고리즘&lt;/td&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;sklearn.svm&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;서포트 벡터 머신 알고리즘&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ML 알고리즘&lt;/td&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;sklearn.tree&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;의사 결정 트리 알고리즘&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ML 알고리즘&lt;/td&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;sklearn.cluster&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;비지도 클러스터링 알고리즘&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;유틸리티&lt;/td&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;sklearn.pipeline&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;피처 처리 등 변환과 ML 알고리즘 학습, 예측을 묶어 실행할 수 있는 유틸리티&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&quot;33-사이킷런의-주요-모듈&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#33-%EC%82%AC%EC%9D%B4%ED%82%B7%EB%9F%B0%EC%9D%98-%EC%A3%BC%EC%9A%94-%EB%AA%A8%EB%93%88&quot; aria-label=&quot;33 사이킷런의 주요 모듈 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3.3. 사이킷런의 주요 모듈&lt;/h3&gt;
+&lt;p&gt;(생략)&lt;/p&gt;
+&lt;h2 id=&quot;4-model-selection-모듈-소개&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#4-model-selection-%EB%AA%A8%EB%93%88-%EC%86%8C%EA%B0%9C&quot; aria-label=&quot;4 model selection 모듈 소개 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4. Model Selection 모듈 소개&lt;/h2&gt;
+&lt;h3 id=&quot;41-학습테스트-데이터-세트-분리---traintestsplit&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#41-%ED%95%99%EC%8A%B5%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%84%B8%ED%8A%B8-%EB%B6%84%EB%A6%AC---traintestsplit&quot; aria-label=&quot;41 학습테스트 데이터 세트 분리   traintestsplit permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4.1. 학습/테스트 데이터 세트 분리 - train&lt;em&gt;test&lt;/em&gt;split()&lt;/h3&gt;
+&lt;p&gt;학습과 예측을 동일한 데이터 세트로 수행하게 되면, 이미 학습한 데이터 세트를 기반으로 예측하기 때문에 정확도가 100%가 나오는 문제가 발생합니다. 이러한 문제를 해결하기 위해 사이킷런의 &lt;code class=&quot;language-text&quot;&gt;train_test_split()&lt;/code&gt; 을 통해 원본 데이터 세트에서 학습 및 테스트 데이터 세트를 쉽게 분리할 수 있습니다. 파라미터로 피처 데이터 세트와 레이블 데이터 세트를 입력받습니다. 선택적으로, 테스트 데이터 세트의 비율, 데이터를 섞을지, 난수 발생 값을 사용합니다. 다음 예제를 살펴봅시다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tree &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; DecisionTreeClassifier
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;metrics &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; accuracy_score
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;datasets &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; load_iris
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;model_selection &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; train_test_split
+
+dt_clf &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; DecisionTreeClassifier&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+iris_data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; load_iris&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+X_train&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; X_test&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; y_train&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; y_test &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; train_test_split&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;iris_data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; iris_data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;target&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; test_size&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; random_state&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;121&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+dt_clf&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;fit&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;X_train&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; y_train&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+pred&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; dt_clf&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;predict&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;X_test&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;예측 정확도: {0:.4f}&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;accuracy_score&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;y_test&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;pred&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;[실행결과]&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;예측 정확도: 0.9556&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;전체 데이터 세트의 30%를 테스트 데이터로, 70%를 학습 데이터로 분리한 뒤 학습시킨 모델의 예측 정확도를 확인할 수 있습니다.&lt;/p&gt;
+&lt;h3 id=&quot;42-교차-검증&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#42-%EA%B5%90%EC%B0%A8-%EA%B2%80%EC%A6%9D&quot; aria-label=&quot;42 교차 검증 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4.2. 교차 검증&lt;/h3&gt;
+&lt;p&gt;모델이 학습 데이터에만 과도하게 최적화되어 실제 예측을 다른 데이터로 수행할 경우 예측 성능이 과도하게 떨어지는 과적합 현상을 막기 위해, 여러 개의 학습 데이터 세트와 테스트 데이터 세트에 대해 학습과 평가를 수행하는 교차 검증이 효율적일 수 있습니다.&lt;/p&gt;
+&lt;h4 id=&quot;431-k-폴드-교차-검증&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#431-k-%ED%8F%B4%EB%93%9C-%EA%B5%90%EC%B0%A8-%EA%B2%80%EC%A6%9D&quot; aria-label=&quot;431 k 폴드 교차 검증 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4.3.1. K 폴드 교차 검증&lt;/h4&gt;
+&lt;p&gt;K폴드 교차 검증은 전체 데이터 세트를 K개의 데이터 폴드 세트로 만든 다음, 각 폴드 세트에 학습과 검증 평가를 반복적으로 수행하는 방법입니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1200px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABw0lEQVQoz21STW/UMBDNP+fCD+AvgFCFeuwFJKh64IYqoZbDSqVSdyGbdbJx/B17EzuPselWXcpI0UyczPO896aavEOcDpgPHss8oWM7NL9/gTU1nQfM9C2mhDjPWCjnWJblKR/rY1SH0cIqieAMnJZUC/B9CyN4qb3qYeo7OPaA4D1ijC9A8Qy08laXaUYCa5stAr13uy28s+i1g2Fr1BdvwK7egfd7jONI/elkwudP5WmyvmPwRoF3LfIFfBBw2zs0l28hbr5A8j0MTaukgLEWKb6kf6yJsoPgfaEsqDHoAQOrC+D++iPs/TU0SeKMLtkS4JJi0f0Imiinx7pQ7jLlTNEEmJ/f8HD2Cur7J3A9wjmHgTRVpKkUNKExhfJ8CMiGetJ1tVphs9mUf6tApgyZ4uYHmq/nsOtbAujgtYDoO9JWFDBLGispC+U8WQbMOZuUL8lgGbzyRpJ2DIaoNVfv4dY34HzASOcZ0BGgHMhpSWfUFEIolFOK+F9U5vYz7j+8hibAVlgyxRSXM2C3a6BFj75lxZjsslSqUP53F59cng3H2K4xWfF3z0jsZlsTzaEs9ZS1oqlynqfpZA9PdvEx/gBtFf6L1tgr5AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;K-fold&quot;
+        title=&quot;K-fold&quot;
+        src=&quot;/static/ca7c26b2ecbd56ab4263413a676b3123/c1b63/2.png&quot;
+        srcset=&quot;/static/ca7c26b2ecbd56ab4263413a676b3123/5a46d/2.png 300w,
+/static/ca7c26b2ecbd56ab4263413a676b3123/0a47e/2.png 600w,
+/static/ca7c26b2ecbd56ab4263413a676b3123/c1b63/2.png 1200w,
+/static/ca7c26b2ecbd56ab4263413a676b3123/098c1/2.png 1578w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;
+예를 들어, k=5 일때는 그림과 같이 데이터 세트를 5개로 나눈 뒤 그 중 1개를 검증, 나머지 4개를 학습에 사용하는 것을 5회 반복한 후 각 결과를 평균 내어 평가 결과로 반영하면 됩니다.&lt;/p&gt;
+&lt;p&gt;사이킷런의 KFold 클래스를 이용해 교차 검증을 쉽게 할 수 있습니다. 다음 예시를 살펴봅시다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;datasets &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; load_iris
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tree &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; DecisionTreeClassifier
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;metrics &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; accuracy_score
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;model_selection &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; KFold
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; numpy &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; np
+
+
+iris&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;load_iris&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+features&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;iris&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;data
+label&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;iris&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;target
+dt_clf&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;DecisionTreeClassifier&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;random_state&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;156&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;#5개의 폴드 세트로 분리하는 KFold 객체와 폴드 세트별 정확도를 담을 리스트 객체 생성&lt;/span&gt;
+kfold &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; KFold&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;n_splits&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+cv_accuracy &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+n_iter&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# KFold 객체의 split()를 호출하면 폴드별 학습용, 검증용 테스트의 로우 인덱스를 array로 변환&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; train_index&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; test_index &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; kfold&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;split&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;features&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;#kfold.split()으로 반환된 인덱스를 이용해 학습용, 검증용 테스트 데이터 추출&lt;/span&gt;
+    X_train&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; X_test &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; features&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;train_index&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; features&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;test_index&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    y_train&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; y_test &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; label&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;train_index&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; label&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;test_index&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;#학습 및 예측&lt;/span&gt;
+    dt_clf&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;fit&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;X_train&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; y_train&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    pred&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;dt_clf&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;predict&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;X_test&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    n_iter &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;#정확도 측정&lt;/span&gt;
+    accuracy&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;np&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;accuracy_score&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;y_test&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; pred&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    train_size&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;X_train&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;shape&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    test_size&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;X_test&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;shape&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;\n#{0} 교차 검증 정확도 :{1}, 학습 데이터 크기: {2}, 검증 데이터 크기: {3}&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;n_iter&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; accuracy&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; train_size&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; test_size&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    cv_accuracy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;append&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;accuracy&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;#평균 정확도 계산&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;\n## 평균 검증 정확도:&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; np&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mean&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;cv_accuracy&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;[실행 결과]&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;#1 교차 검증 정확도 :1.0, 학습 데이터 크기: 120, 검증 데이터 크기: 30
+
+#2 교차 검증 정확도 :0.9667, 학습 데이터 크기: 120, 검증 데이터 크기: 30
+
+#3 교차 검증 정확도 :0.8667, 학습 데이터 크기: 120, 검증 데이터 크기: 30
+
+#4 교차 검증 정확도 :0.9333, 학습 데이터 크기: 120, 검증 데이터 크기: 30
+
+#5 교차 검증 정확도 :0.7333, 학습 데이터 크기: 120, 검증 데이터 크기: 30
+
+## 평균 검증 정확도: 0.9&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;전체 데이터 세트 150 개를 5등분 하였으므로 120개의 학습 데이터와 30개의 검증 데이터로 학습과 검증이 진행되는 것을 확인할 수 있습니다. 학습 데이터와 검증 데이터가 변하기 때문에 매번 검증 정확도가 달라지며, 교차 검증 정확도의 평균으로 전체 정확도를 측정할 수 있습니다.&lt;/p&gt;
+&lt;h4 id=&quot;432-stratified-k-폴드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#432-stratified-k-%ED%8F%B4%EB%93%9C&quot; aria-label=&quot;432 stratified k 폴드 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4.3.2. Stratified K 폴드&lt;/h4&gt;
+&lt;p&gt;Stratified K 폴드는 특정 레이블 값이 특이하게 많거나 매우 적어 값의 분포가 한쪽으로 치우치는 불균형한 분포도를 가진 레이블 데이터 집합을 위한 K 폴드 방식입니다. Stratified K 폴드는 원본 데이터의 레이블 분포를 먼저 고려한 뒤, 이 분포와 동일하게 학습과 검증 데이터 세트를 분배합니다.&lt;/p&gt;
+&lt;p&gt;우선 붓꽃 데이터 세트에서 레이블 값의 분포도를 확인합시다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; pandas &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; pd
+
+iris &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; load_iris&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+iris_df &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; pd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DataFrame&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; iris&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; columns &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; iris&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;feature_names&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+iris_df&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;label&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; iris&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;target
+iris_df&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;label&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value_counts&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;[실행 결과]&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;0    50
+1    50
+2    50
+Name: label, dtype: int64&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;확인 결과 레이블 값은 0, 1, 2 모두 50개로 동일합니다. &lt;code class=&quot;language-text&quot;&gt;StratifiedKFold&lt;/code&gt; 를 수행하고 각 교차 검증에서 학습과 검증 레이블데이터의 분포를 살펴보겠습니다. 이때 주의하여야 할 점은 &lt;code class=&quot;language-text&quot;&gt;StratifiedKFold&lt;/code&gt; 를 사용할 때는 &lt;code class=&quot;language-text&quot;&gt;split()&lt;/code&gt; 매서드의 인자로 피처 데이터 세트 뿐만 아니라 레이블 데이터 세트도 반드시 필요하다는 사실입니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;model_selection &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; StratifiedKFold
+
+skf &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; StratifiedKFold&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;n_splits&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+n_iter&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; train_index&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; test_index &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; skf&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;split&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;iris_df&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; iris_df&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;label&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    n_iter&lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+    label_train &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; iris_df&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;label&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;iloc&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;train_index&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    label_test &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; iris_df&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;label&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;iloc&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;test_index&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;## 교차 검증: {0}&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;n_iter&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;학습 레이블 데이터 분포:\n&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; label_train&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value_counts&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;검증 레이블 데이터 분포:\n&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; label_test&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value_counts&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;[실행 결과]&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;## 교차 검증: 1
+학습 레이블 데이터 분포:
+ 2    34
+0    33
+1    33
+Name: label, dtype: int64
+검증 레이블 데이터 분포:
+ 0    17
+1    17
+2    16
+Name: label, dtype: int64
+## 교차 검증: 2
+학습 레이블 데이터 분포:
+ 1    34
+0    33
+2    33
+Name: label, dtype: int64
+검증 레이블 데이터 분포:
+ 0    17
+2    17
+1    16
+Name: label, dtype: int64
+## 교차 검증: 3
+학습 레이블 데이터 분포:
+ 0    34
+1    33
+2    33
+Name: label, dtype: int64
+검증 레이블 데이터 분포:
+ 1    17
+2    17
+0    16
+Name: label, dtype: int64&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;StratifiedKFold&lt;/code&gt; 를 사용하면 학습 레이블과 검증 레이블 데이터 값의 분포도가 동일하게 할당되었음을 확인할 수 있습니다. 이를 활용하여 붓꽃 데이터를 교차 검증하면 다음과 같습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;datasets &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; load_iris
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tree &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; DecisionTreeClassifier
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;metrics &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; accuracy_score
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;model_selection &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; StratifiedKFold
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; numpy &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; np
+
+iris&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;load_iris&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+features&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;iris&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;data
+label&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;iris&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;target
+dt_clf&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;DecisionTreeClassifier&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;random_state&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;156&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+skf &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; StratifiedKFold&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;n_splits&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+n_iter&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+cv_accuracy&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; train_index&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; test_index &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; skf&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;split&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;features&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; label&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    X_train&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; X_test &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; features&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;train_index&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; features&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;test_index&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    y_train&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; y_test &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; label&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;train_index&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; label&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;test_index&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+    dt_clf&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;fit&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;X_train&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; y_train&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    pred&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;dt_clf&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;predict&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;X_test&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    n_iter &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+    accuracy&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;np&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;accuracy_score&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;y_test&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; pred&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    train_size&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;X_train&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;shape&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    test_size&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;X_test&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;shape&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;\n#{0} 교차 검증 정확도 :{1}, 학습 데이터 크기: {2}, 검증 데이터 크기: {3}&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;n_iter&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; accuracy&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; train_size&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; test_size&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    cv_accuracy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;append&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;accuracy&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;\n## 교차 검증별 정확도:&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; np&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;cv_accuracy&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;## 평균 검증 정확도:&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; np&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mean&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;cv_accuracy&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;[실행 결과]&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;#1 교차 검증 정확도 :0.98, 학습 데이터 크기: 100, 검증 데이터 크기: 50
+
+#2 교차 검증 정확도 :0.94, 학습 데이터 크기: 100, 검증 데이터 크기: 50
+
+#3 교차 검증 정확도 :0.98, 학습 데이터 크기: 100, 검증 데이터 크기: 50
+
+## 교차 검증별 정확도: [0.98 0.94 0.98]
+## 평균 검증 정확도: 0.9666666666666667&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;3 개의 &lt;code class=&quot;language-text&quot;&gt;Stratified K 폴드&lt;/code&gt;로 교차 검증한 결과 평균 검증 정확도가 96.7% 정도임을 확인할 수 있습니다. 왜곡된 레이블 데이터 세트에서는 반드시 &lt;code class=&quot;language-text&quot;&gt;Stratified K 폴드&lt;/code&gt;를 이용해 교차 검증해야 합니다.&lt;/p&gt;
+&lt;h4 id=&quot;433-교차-검증을-보다-간편하게--crossvalscore&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#433-%EA%B5%90%EC%B0%A8-%EA%B2%80%EC%A6%9D%EC%9D%84-%EB%B3%B4%EB%8B%A4-%EA%B0%84%ED%8E%B8%ED%95%98%EA%B2%8C--crossvalscore&quot; aria-label=&quot;433 교차 검증을 보다 간편하게  crossvalscore permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4.3.3. 교차 검증을 보다 간편하게- cross&lt;em&gt;val&lt;/em&gt;score()&lt;/h4&gt;
+&lt;p&gt;사이킷런은 교차 검증을 좀 더 편리하게 수행할 수 있는 &lt;code class=&quot;language-text&quot;&gt;cross_val_score()&lt;/code&gt; API 를 제공합니다. 다음과 같은 형태로 선언합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;cross_val_score&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;estimator&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; X&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; y&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; scoring&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; cv&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; n_jobs&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; verbose&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; fit_params&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; pre_dispatch&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;2*n_jobs&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이중 주요 파라미터는 &lt;code class=&quot;language-text&quot;&gt;estimator&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;X&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;y&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;scoring&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;cv&lt;/code&gt; 입니다. &lt;code class=&quot;language-text&quot;&gt;estimator&lt;/code&gt;는 사이킷런의 분류 또는 회귀 알고리즘 클래스를 의미하며, &lt;code class=&quot;language-text&quot;&gt;X&lt;/code&gt;는 피처 데이터 세트, &lt;code class=&quot;language-text&quot;&gt;y&lt;/code&gt;는 레이블 데이터 세트, &lt;code class=&quot;language-text&quot;&gt;scoring&lt;/code&gt;은 예측 성능 평가 지표, &lt;code class=&quot;language-text&quot;&gt;cv&lt;/code&gt;는 교차 검증 폴드 수를 의미합니다. &lt;code class=&quot;language-text&quot;&gt;cross_val_score()&lt;/code&gt;는 실행되면 &lt;code class=&quot;language-text&quot;&gt;Stratified K 폴드&lt;/code&gt; 방식으로 진행한 교차 검증의 &lt;code class=&quot;language-text&quot;&gt;scoring&lt;/code&gt; 파라미터 성능 지표 값을 배열로 반환합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tree &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; DecisionTreeClassifier
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;model_selection &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; cross_val_score&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; cross_validate
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;datasets &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; load_iris
+
+iris_data&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;load_iris&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+dt_clf&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;DecisionTreeClassifier&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;random_state&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;156&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+data&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;iris_data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;data
+label&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;iris_data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;target
+
+scores&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;cross_val_score&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;dt_clf&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;label&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;scoring&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;accuracy&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;cv&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;교차 검증별 정확도:&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; np&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;scores&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;평균 검증 정확도:&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; np&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;np&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mean&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;scores&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;[실행 결과]&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;교차 검증별 정확도: [0.98 0.94 0.98]
+평균 검증 정확도: 0.9667&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;주어진 파라미터에 따라 3개의 교차 검증 세트로 측정한 정확도를 확인할 수 있습니다. 비슷한 API로, 여러 평가 지표에 대한 성능을 확인하고 싶을 때에는 &lt;code class=&quot;language-text&quot;&gt;cross_validate()&lt;/code&gt; 를 사용하면 됩니다.&lt;/p&gt;
+&lt;h4 id=&quot;434-gridsearchcv---교차-검증과-하이퍼-파라미터-튜닝을-한-번에&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#434-gridsearchcv---%EA%B5%90%EC%B0%A8-%EA%B2%80%EC%A6%9D%EA%B3%BC-%ED%95%98%EC%9D%B4%ED%8D%BC-%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0-%ED%8A%9C%EB%8B%9D%EC%9D%84-%ED%95%9C-%EB%B2%88%EC%97%90&quot; aria-label=&quot;434 gridsearchcv   교차 검증과 하이퍼 파라미터 튜닝을 한 번에 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4.3.4. GridSearchCV - 교차 검증과 하이퍼 파라미터 튜닝을 한 번에&lt;/h4&gt;
+&lt;p&gt;하이퍼 파라미터는 머신 러닝 알고리즘을 구성하는 주요 요소로, 이 값을 조정하여 예측 성능을 개선시킬 수 있습니다. 하이퍼 파라미터를 순차적으로 변경하면서 최고 성능을 가지는 파라미터 조합을 찾고자 한다면 해당 파라미터의 집합을 딕셔너리의 형태로 설정하고 &lt;code class=&quot;language-text&quot;&gt;GridSearchCV&lt;/code&gt; 를 사용한다면 최적의 파라미터와 수행 결과를 찾을 수 있습니다. &lt;code class=&quot;language-text&quot;&gt;GridSearchCV&lt;/code&gt;의 주요 파라미터는 &lt;code class=&quot;language-text&quot;&gt;estimator&lt;/code&gt;, 튜닝할 파라미터의 딕셔너리인 &lt;code class=&quot;language-text&quot;&gt;param_grid&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;scoring&lt;/code&gt;, 교차 검증 세트의 개수인 &lt;code class=&quot;language-text&quot;&gt;cv&lt;/code&gt;, 최적 학습 파라미터로 &lt;code class=&quot;language-text&quot;&gt;estimator&lt;/code&gt; 객체를 재학습시킬지의 유무를 결정하는 &lt;code class=&quot;language-text&quot;&gt;refit&lt;/code&gt; 이 있습니다. 다음 예시를 살펴봅시다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;datasets &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; load_iris
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tree &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; DecisionTreeClassifier
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sklearn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;model_selection &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; GridSearchCV
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; pandas &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; pd
+
+&lt;span class=&quot;token comment&quot;&gt;#데이터를 로딩하고 학습과 테스트 데이터 분리&lt;/span&gt;
+iris_data&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;load_iris&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+X_train&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; X_test&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; y_train&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; y_test &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; train_test_split&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;iris_data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; iris_data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;target&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; test_size&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; random_state&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;121&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+dtree &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; DecisionTreeClassifier&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;#튜닝할 파라미터를 딕셔너리의 형태로 결정&lt;/span&gt;
+parameters&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;max_depth&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;min_samples_split&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+grid_dtree&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;GridSearchCV&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;dtree&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;param_grid&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;parameters&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; cv&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; refit&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+grid_dtree&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;fit&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;X_train&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; y_train&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+scores_df&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;pd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DataFrame&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;grid_dtree&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;cv_results_&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+scores_df&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;params&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;mean_test_score&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;rank_test_score&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;split0_test_score&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;split1_test_score&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;split2_test_score&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;[실행 결과]
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 855px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 36.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAA7DAAAOwwHHb6hkAAABH0lEQVQozz2RV5LCQAxE5yjYOIAzpggOGBN2F/jg/rfR6qkYPlRua3parR6XZZlQ6/XavuPpJMe+l0G/1/vd8DhN0o+j9ebr1TiD/k/zLN0w2Pn5cpFOuS5JEgmCQPKikEmbf6+XlFUly+XSRIqylDAMJUlTqyiKZNO2kiqGk+e5xKoRx7FUdS2OA0Qh/Twe8nq/pdls7OLucDBB8Gq1soJbN41hRBD0GhhxkBeLhV3ENqKFuqXnnYBxQ7EN5x4j5HGm4o7svMP5dpPf59McMv3YdVLqILA5/HDb7faLEeeMwY06/2aIOgHjEkxvt9/bQ5lD3YQiT7JiMzipikWfPsMdk3DA/rwgDskIEgPssq6EA5+VOSRD5fCY6SdbNvsHlp/V1u/Sk40AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;실행결과&quot;
+        title=&quot;실행결과&quot;
+        src=&quot;/static/fa15d74471c2eb56d30cb1ec5a15e9de/77800/3.png&quot;
+        srcset=&quot;/static/fa15d74471c2eb56d30cb1ec5a15e9de/5a46d/3.png 300w,
+/static/fa15d74471c2eb56d30cb1ec5a15e9de/0a47e/3.png 600w,
+/static/fa15d74471c2eb56d30cb1ec5a15e9de/77800/3.png 855w&quot;
+        sizes=&quot;(max-width: 855px) 100vw, 855px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;하이퍼 파라미터 &lt;code class=&quot;language-text&quot;&gt;max_depth&lt;/code&gt; 와 &lt;code class=&quot;language-text&quot;&gt;min_samples_split&lt;/code&gt;을 각각 변화 시켜 가며 6번 학습을 시킨 후 평가 결과를 확인할 수 있습니다. 하이퍼 파라미터 값에 대해 각 폴드 평가 결과와, 전체 평균, 그리고 전체 평균의 순위를 확인할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;fit()&lt;/code&gt; 을 수행하고 나면 &lt;code class=&quot;language-text&quot;&gt;best_params_&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;best_score_&lt;/code&gt; 속성에 최고 성능을 나타낸 파라미터와 결과값이 저장됩니다. 그 값을 알아보고 파라미터로 학습된 모델을 이용해 새로운 테스트 데이터 세트에 대한 예측 결과를 알아보겠습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;GridSearchCV 최적 파라미터:&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;grid_dtree&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;best_params_&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;GridSearchCv 최적 정확도:{0:.4f}&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;grid_dtree&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;best_score_&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+estimator&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;grid_dtree&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;best_estimator_
+
+pred&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;estimator&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;predict&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;X_test&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;테스트 데이터 세트 정확도: {0:.4f}&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;accuracy_score&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;y_test&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;pred&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;[실행 결과]&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;GridSearchCV 최적 파라미터: {&apos;max_depth&apos;: 3, &apos;min_samples_split&apos;: 2}
+GridSearchCv 최적 정확도:0.9750
+테스트 데이터 세트 정확도: 0.9667&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Chapter 2 의 나머지 내용은 &lt;a href=&quot;https://kunheekimkr.github.io/ML/chapter2-2/&quot;&gt;다음 글&lt;/a&gt; 에서 이어서 설명하겠습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[파이썬 머신러닝 완벽 가이드] 1.파이썬 기반의 머신 러닝과 생태계 이해(2)]]></title><description><![CDATA[Chapter 1 의 이전 내용은 이전 글 을 확인해 주세요! 4. 판다스 (Pandas) 판다스는 파이썬의 데이터 핸들링 라이브러리입니다. 데이터를 2차원의  객체로 변환하여 각종 데이터 핸들링을 수행할 수 있습니다. 4.…]]></description><link>https://kunheekimkr.github.io/ML/chapter1-2/</link><guid isPermaLink="false">https://kunheekimkr.github.io/ML/chapter1-2/</guid><pubDate>Tue, 25 Jan 2022 17:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Chapter 1 의 이전 내용은 &lt;a href=&quot;https://kunheekimkr.github.io/ML/chapter1-1/&quot;&gt;이전 글&lt;/a&gt; 을 확인해 주세요!&lt;/p&gt;
 &lt;h2 id=&quot;4-판다스-pandas&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#4-%ED%8C%90%EB%8B%A4%EC%8A%A4-pandas&quot; aria-label=&quot;4 판다스 pandas permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4. 판다스 (Pandas)&lt;/h2&gt;
 &lt;p&gt;판다스는 파이썬의 데이터 핸들링 라이브러리입니다. 데이터를 2차원의 &lt;code class=&quot;language-text&quot;&gt;DataFrame&lt;/code&gt; 객체로 변환하여 각종 데이터 핸들링을 수행할 수 있습니다.&lt;/p&gt;
 &lt;h3 id=&quot;41-판다스-시작---파일을-dataframe으로-로딩-기본-api&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#41-%ED%8C%90%EB%8B%A4%EC%8A%A4-%EC%8B%9C%EC%9E%91---%ED%8C%8C%EC%9D%BC%EC%9D%84-dataframe%EC%9C%BC%EB%A1%9C-%EB%A1%9C%EB%94%A9-%EA%B8%B0%EB%B3%B8-api&quot; aria-label=&quot;41 판다스 시작   파일을 dataframe으로 로딩 기본 api permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4.1 판다스 시작 - 파일을 DataFrame으로 로딩, 기본 API&lt;/h3&gt;
