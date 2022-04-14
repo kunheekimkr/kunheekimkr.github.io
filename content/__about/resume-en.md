@@ -10,13 +10,19 @@ lang: 'en'
 
 ## 🎓 학력 (Education)
 
-## 서울과학고등학교 (Seoul Science High School)
+### 서울과학고등학교 (Seoul Science High School)
 
 2018.03. ~ 2021.02. (졸업)
 
-## 고려대학교 (Korea University)
+### 고려대학교 (Korea University)
 
 2021.03. ~ 현재 (학부 재학중)
+
+## 활동 (Projects)
+
+### 👨‍💻 SW Maestro 13기 연수생
+
+2022.04. ~ 현재 (진행중)
 
 ## 💌 연락처 (Contact)
 
