@@ -2,8 +2,7 @@ module.exports = {
   title: `KunheeKim.Dev`,
   description: `Blog posted by Kunhee Kim`,
   author: `[Kunhee Kim]`,
-  introduction: ` Junior developer intersted in Machine Learning and Problem Solving.
-  Studying Cyber Defense @ Korea Univ.`,
+  introduction: ` Junior FE/App developer studying Cyber Defense @ Korea Univ.`,
   siteUrl: `https://kunheekimkr.github.io`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account
@@ -30,5 +29,4 @@ module.exports = {
   },
   ga: 'UA-216268064-1', // Add your google analytics tranking ID
   ad: '', // Add your google adsense publisherId `ca-pub-xxxxxxxxxx`
-
 }
